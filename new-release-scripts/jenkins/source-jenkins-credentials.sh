@@ -28,7 +28,7 @@ chmod 700 $TMP_RSA_KEY_NAME
 echo "$JENKINS_GPG_KEY" | tr "," "\n" > $TMP_GPG_KEY_NAME
 chmod 700 $TMP_GPG_KEY_NAME
 export GNUPGHOME=$tmpdir
-gpg --allow-secret-key-import --import $TMP_GPG_KEY_NAME
+gpg --allow-secret-key-import --batch --import $TMP_GPG_KEY_NAME
 popd
 
 # Set-up env vars needed by Spark release scripts
